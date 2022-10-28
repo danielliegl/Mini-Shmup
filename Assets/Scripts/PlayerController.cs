@@ -11,28 +11,50 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float fire_rate_;
   [SerializeField] private GameObject bullet_;
 
+  [SerializeField] private bool playerTwo;
 
   private Rigidbody2D rb_;
 
   private bool can_fire = true;
   private int burst_counter = 0;
+  private string horizontal_axis;
+  private string vertical_axis;
+  private string fire_button;
   
   // Start is called before the first frame update
   void Start()
   {
     rb_ = GetComponent<Rigidbody2D>();
+    DontDestroyOnLoad(this.gameObject);
+    setControls();
+  }
+
+  void setControls()
+  {
+    if(playerTwo)
+    {
+      horizontal_axis = "P2 Horizontal";
+      vertical_axis = "P2 Vertical";
+      fire_button = "P2 Fire";
+    }
+    else
+    {
+      horizontal_axis = "P1 Horizontal";
+      vertical_axis = "P1 Vertical";
+      fire_button = "P1 Fire";
+    }
   }
 
   // Update is called once per frame
   void Update()
   {
-    var horizontal_move_input = Input.GetAxisRaw("Horizontal");
-    var vertical_move_input = Input.GetAxisRaw("Vertical");
+    var horizontal_move_input = Input.GetAxisRaw(horizontal_axis);
+    var vertical_move_input = Input.GetAxisRaw(vertical_axis);
 
 
     rb_.velocity = new Vector2(horizontal_move_input * speed_, vertical_move_input * speed_);
 
-    if(can_fire && Input.GetButton("Fire1"))
+    if(can_fire && Input.GetButton(fire_button))
     {
       Shoot();
     }
