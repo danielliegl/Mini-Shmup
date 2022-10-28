@@ -5,12 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject alien_;
+    [SerializeField] private Enemy alien_;
+    [SerializeField] private Enemy boss_;
 
     public int score = 0;
     public int difficulty = 1;
 
     private bool can_spawn = true;
+    private bool boss_spawned = false;
 
 
 
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         //Spawn Boss!
         Debug.Log("Spawning BBEG");
+        boss_spawned = true;
+        Instantiate(boss_, new Vector2(5.5313f, -0.0187f), Quaternion.identity);
     }
 
     private IEnumerator SpawnTimer(float seconds)
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         difficulty++;
-        if(difficulty > 100)
+        if(difficulty > 10 && !boss_spawned)
         {
             SpawnBoss();
         }

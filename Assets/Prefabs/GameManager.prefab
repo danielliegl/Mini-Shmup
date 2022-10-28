@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcc35e56a5c5d9489a8117e6075d594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alien_: {fileID: 2729020617074222572, guid: 96ea796eccc52d84fb21276095638f01, type: 3}
+  alien_: {fileID: 680875339706259885, guid: 96ea796eccc52d84fb21276095638f01, type: 3}
+  boss_: {fileID: 7993139744068719504, guid: 3c0bfd9485982e946800582bf7bf8088, type: 3}
   score: 0
   difficulty: 1

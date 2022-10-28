@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 
   [SerializeField] public int health_;
   [SerializeField] public float speed_;
+  [SerializeField] public bool invincible = false;
+  [SerializeField] public bool shoot_through = false;
+
   
   public Rigidbody2D rb_;
 
@@ -25,10 +28,13 @@ public class Enemy : MonoBehaviour
 
   public void take_damage(int damage)
   {
-    health_ -= damage;
-    if(health_ <= 0)
+    if(!invincible)
     {
+      health_ -= damage;
+      if(health_ <= 0)
+      {
         Destroy(gameObject);
+      }
     }
   }
 
