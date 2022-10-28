@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
   [SerializeField] private Enemy alien_;
   [SerializeField] private Enemy boss_;
-
   [SerializeField] private GameObject player_1;
   [SerializeField] private GameObject player_2;
+
+  [SerializeField] public bool game_won = false;
 
   public int score = 0;
   public int difficulty = 1;
@@ -50,15 +52,37 @@ public class GameManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if(can_spawn && game_running)
+    if(game_running)
     {
+      checkLose();
+      if(can_spawn)
+      {
         StartCoroutine(SpawnTimer(growth_function(difficulty)));
+      }
     }
+
+  }
+
+
+  void checkLose()
+  {
+    GameObject[] alive_players = GameObject.FindGameObjectsWithTag("Player");
+    if(alive_players.Length == 0)
+    {
+      game_running = false;
+      gameOver(false);
+    }
+  }
+
+  public void gameOver(bool win)
+  {
+    game_won = win;
+    SceneManager.LoadScene(2);
   }
 
   float growth_function(float x)
   {
-    return (3.0f/(1.0f+Mathf.Exp((x-5.0f)*0.4f)) + 2.0f)/difficulty_modifier;
+    return Mathf.Max((-0.2f * x + 4.0f)/difficulty_modifier, 1.25f);
   }
 
   void SpawnBoss()

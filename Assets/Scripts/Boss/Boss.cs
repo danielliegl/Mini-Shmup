@@ -21,6 +21,10 @@ public class Boss : Enemy
 
   }
 
+  public override void onDeath()
+  {
+  }
+
   bool allEyesDestroyed()
   {
     foreach (Enemy eye in eyes_)

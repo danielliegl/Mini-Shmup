@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5364270913604213104}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -47,7 +47,8 @@ MonoBehaviour:
   alien_: {fileID: 680875339706259885, guid: 96ea796eccc52d84fb21276095638f01, type: 3}
   boss_: {fileID: 7993139744068719504, guid: 3c0bfd9485982e946800582bf7bf8088, type: 3}
   player_1: {fileID: 1780771716202587569, guid: 147a209ebbe23d643913f7e5092830c5, type: 3}
-  player_2: {fileID: 1780771716202587569, guid: 147a209ebbe23d643913f7e5092830c5, type: 3}
+  player_2: {fileID: 1780771716202587569, guid: aa5e8909befff4d41bd20f5e277db44e, type: 3}
+  game_won: 0
   score: 0
   difficulty: 1
   multiplayer: 0

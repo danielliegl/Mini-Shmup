@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
       health_ -= damage;
       if(health_ <= 0)
       {
+        onDeath();
         Destroy(gameObject);
       }
     }
@@ -44,6 +45,11 @@ public class Enemy : MonoBehaviour
   }
 
   public virtual void shoot()
+  {
+
+  }
+
+  public virtual void onDeath()
   {
 
   }

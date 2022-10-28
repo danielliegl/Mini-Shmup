@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -744825519917453393}
   - component: {fileID: 680875339706259885}
   - component: {fileID: 5843429041541665290}
+  - component: {fileID: -2231908466463218195}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1ee187a78adc5ec42af3b31903f3a72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,7 +105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.15, y: 4.16}
+    oldSize: {x: 2.075, y: 2.08}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -127,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_: 3
   speed_: 2
+  invincible: 0
+  shoot_through: 0
   rb_: {fileID: 0}
 --- !u!50 &5843429041541665290
 Rigidbody2D:
@@ -149,3 +152,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2231908466463218195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729020617074222572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ab3341e19943144ac96fff4546014d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShadowOffset: {x: -0.1, y: -0.1}
+  ShadowMaterial: {fileID: 2100000, guid: 6f6bebbcce5374a44976b05b6984c996, type: 2}
