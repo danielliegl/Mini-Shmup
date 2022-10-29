@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject player_2;
 
   [SerializeField] public bool game_won = false;
+  [SerializeField] private int total_score = 0;
 
   public int score = 0;
   public int difficulty = 1;
@@ -77,6 +78,13 @@ public class GameManager : MonoBehaviour
   public void gameOver(bool win)
   {
     game_won = win;
+    GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+    
+    foreach (GameObject player in players)
+    {
+      Destroy(player);
+    }
+    
     SceneManager.LoadScene(2);
   }
 
@@ -116,5 +124,12 @@ public class GameManager : MonoBehaviour
       StartCoroutine(IncreaseDifficulty());
     }
 
+
+
   }
+
+    public void increaseScore(int amount)
+    {
+      total_score += amount;
+    }
 }

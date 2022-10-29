@@ -7,9 +7,14 @@ public class Enemy : MonoBehaviour
 
   [SerializeField] public int health_;
   [SerializeField] public float speed_;
+
+  [SerializeField] public int score_;
   [SerializeField] public bool invincible = false;
   [SerializeField] public bool shoot_through = false;
 
+  [SerializeField] public Effect effect_;
+
+  public GameManager gm_;
   
   public Rigidbody2D rb_;
 
@@ -17,6 +22,13 @@ public class Enemy : MonoBehaviour
   void Start()
   {
     rb_ = gameObject.GetComponent<Rigidbody2D>();
+    gm_ = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    customStart();
+  }
+
+  public virtual void customStart()
+  {
+
   }
 
   // Update is called once per frame
@@ -26,7 +38,7 @@ public class Enemy : MonoBehaviour
     shoot();
   }
 
-  public void take_damage(int damage)
+  public virtual void take_damage(int damage)
   {
     if(!invincible)
     {
@@ -34,6 +46,7 @@ public class Enemy : MonoBehaviour
       if(health_ <= 0)
       {
         onDeath();
+        gm_.increaseScore(score_);
         Destroy(gameObject);
       }
     }

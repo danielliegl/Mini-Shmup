@@ -14,4 +14,10 @@ public class BossEye : Enemy
   {
 
   }
+
+  public override void onDeath()
+  {
+    base.onDeath();
+    Instantiate(effect_, gameObject.transform.position, Quaternion.identity);
+  }
 }

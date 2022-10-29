@@ -24,6 +24,7 @@ public class ReplayMenu : MonoBehaviour
   }
   public void Replay()
   {
+    Destroy(gm_.gameObject);
     SceneManager.LoadScene(0);
   }
 

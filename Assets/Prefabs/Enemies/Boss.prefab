@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7993139744068719504}
   - component: {fileID: -6365296229710523725}
   - component: {fileID: 345461370758146043}
+  - component: {fileID: 1675704067449997491}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4024387235506424506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5313, y: -0.0187, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.68683237, y: 0.68522936, z: 0.66792995}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -129,8 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_: 100
   speed_: 0
+  score_: 1000
   invincible: 1
   shoot_through: 1
+  effect_: {fileID: 5689307968892551599, guid: 1ea3c8f31b763104e8a63a7c42d52a10, type: 3}
+  gm_: {fileID: 0}
   rb_: {fileID: 0}
   eyes_:
   - {fileID: 6168631456506965070}
@@ -406,6 +410,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShadowOffset: {x: -0.1, y: -0.1}
   ShadowMaterial: {fileID: 2100000, guid: 6f6bebbcce5374a44976b05b6984c996, type: 2}
+--- !u!95 &1675704067449997491
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024387235506424506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 374b71b9ceb99d34e99d78b14c6c32c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4603823333886181617
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,8 +568,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_: 1
   speed_: 0
+  score_: 0
   invincible: 1
   shoot_through: 1
+  effect_: {fileID: 0}
+  gm_: {fileID: 0}
   rb_: {fileID: 0}
 --- !u!1 &5044930588473147174
 GameObject:
@@ -695,8 +722,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_: 1
   speed_: 0
+  score_: 0
   invincible: 1
   shoot_through: 1
+  effect_: {fileID: 0}
+  gm_: {fileID: 0}
   rb_: {fileID: 0}
 --- !u!1001 &1372157719558525191
 PrefabInstance:

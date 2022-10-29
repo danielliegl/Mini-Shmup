@@ -570,7 +570,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &513781914
 PrefabInstance:
@@ -581,7 +581,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1874933715545184640, guid: a677a8a01f8dc4a46bdb52cd782ddc3d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1874933715545184640, guid: a677a8a01f8dc4a46bdb52cd782ddc3d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,12 +689,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Daniel Liegl 11771948
 
+
     Implemented Features:
 
-    - 2 Player
+    #3: Exploding Proj.
 
-    -
-    Something Else'
+    #8:
+    Local 2 Player'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6567158a3259a8f49b252f403e5b1837, type: 2}
   m_sharedMaterial: {fileID: -1874914420860755432, guid: 6567158a3259a8f49b252f403e5b1837, type: 2}
@@ -815,7 +816,7 @@ Transform:
   m_Children:
   - {fileID: 78049565}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803933751 stripped
 MonoBehaviour:
