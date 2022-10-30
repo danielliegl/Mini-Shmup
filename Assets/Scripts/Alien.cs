@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Alien : Enemy
 {
-
+  [SerializeField] private PowerUp powerup_;
   override public void move()
   {
     rb_.velocity = new Vector2(-1 * speed_, 0);
@@ -19,6 +19,10 @@ public class Alien : Enemy
   {
     base.onDeath();
     Instantiate(effect_, gameObject.transform.position, Quaternion.identity);
+    if(Random.Range(1, 11) <= 1)
+    {
+      Instantiate(powerup_, gameObject.transform.position, Quaternion.identity);
+    }
   }
 
 }

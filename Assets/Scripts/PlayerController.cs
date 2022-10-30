@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
   [SerializeField] private bool playerTwo;
 
+  [SerializeField] private int bomb_ammo = 0;
+  [SerializeField] private GameObject bomb_;
+
   private Rigidbody2D rb_;
 
   private bool can_fire = true;
@@ -20,6 +24,9 @@ public class PlayerController : MonoBehaviour
   private string horizontal_axis;
   private string vertical_axis;
   private string fire_button;
+  private string bomb_button;
+
+  private Animator animator_;
   
   // Start is called before the first frame update
   void Start()
@@ -27,6 +34,7 @@ public class PlayerController : MonoBehaviour
     rb_ = GetComponent<Rigidbody2D>();
     DontDestroyOnLoad(this.gameObject);
     setControls();
+    animator_ = gameObject.GetComponent<Animator>();
   }
 
   void setControls()
@@ -36,12 +44,14 @@ public class PlayerController : MonoBehaviour
       horizontal_axis = "P2 Horizontal";
       vertical_axis = "P2 Vertical";
       fire_button = "P2 Fire";
+      bomb_button = "P2 Bomb";
     }
     else
     {
       horizontal_axis = "P1 Horizontal";
       vertical_axis = "P1 Vertical";
       fire_button = "P1 Fire";
+      bomb_button = "P1 Bomb";
     }
   }
 
@@ -58,7 +68,31 @@ public class PlayerController : MonoBehaviour
     {
       Shoot();
     }
+
+    ShootBomb();
+    SetAnimation();
     
+  }
+
+  void SetAnimation()
+  {
+    if(bomb_ammo > 0)
+    {
+      animator_.Play("PlayerHasBomb");
+    }
+    else
+    {
+      animator_.Play("Player");
+    }
+  }
+
+  void ShootBomb()
+  {
+    if(bomb_ammo > 0 && Input.GetButtonDown(bomb_button))
+    {
+      Instantiate(bomb_, gameObject.transform.position, Quaternion.identity);
+      bomb_ammo--;
+    }
   }
 
   void Shoot()
@@ -85,9 +119,21 @@ public class PlayerController : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D collision)
   {
-    if(collision.gameObject.tag == "Enemy")
+    if(collision.gameObject.tag == "Enemy" || 
+      collision.gameObject.tag == "EnemyBullet")
     {
       Destroy(gameObject);
     }
+
+    if(collision.gameObject.tag == "PowerUp")
+    {
+      collision.gameObject.GetComponent<PowerUp>().applyPowerUp(this);
+      Destroy(collision.gameObject);
+    }
+  }
+
+  public void addBombAmmo(int amount)
+  {
+    bomb_ammo += amount;
   }
 }

@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3437047098005170055}
   - component: {fileID: -3692686196340684966}
   - component: {fileID: 5061612309468138212}
+  - component: {fileID: -2561433430200304768}
   - component: {fileID: 8466072917811563665}
   m_Layer: 0
   m_Name: alien_proj
-  m_TagString: Enemy
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed_: 6
-  damage_: 0
 --- !u!50 &5061612309468138212
 Rigidbody2D:
   serializedVersion: 4
@@ -122,6 +122,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2561433430200304768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680018982367755596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ab3341e19943144ac96fff4546014d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShadowOffset: {x: -0.1, y: -0.1}
+  ShadowMaterial: {fileID: 0}
 --- !u!61 &8466072917811563665
 BoxCollider2D:
   m_ObjectHideFlags: 0

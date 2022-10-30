@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
   private bool game_running = false;
   private bool can_spawn = true;
   private bool boss_spawned = false;
-
 
 
   // Start is called before the first frame update
@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
 
   }
 
+  public GameObject[] getPlayers()
+  {
+    return GameObject.FindGameObjectsWithTag("Player");
+  }
 
   void checkLose()
   {

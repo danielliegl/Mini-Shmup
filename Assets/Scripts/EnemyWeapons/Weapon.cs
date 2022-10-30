@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
 
   void Update()
   {
-    if(can_shoot)
+    if(can_shoot && gameObject.GetComponentInParent<Renderer>().isVisible)
     {
       shoot();
     }

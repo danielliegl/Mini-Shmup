@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5690404488547279346}
   - component: {fileID: 5893645221793858409}
   - component: {fileID: 5084990097795677513}
+  - component: {fileID: 8656741077756193627}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Enemy
@@ -145,6 +146,26 @@ MonoBehaviour:
   effect_: {fileID: 5689307968892551599, guid: 1ea3c8f31b763104e8a63a7c42d52a10, type: 3}
   gm_: {fileID: 0}
   rb_: {fileID: 0}
+--- !u!95 &8656741077756193627
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6765053266575393267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10cf4a0792822a64b87dd77441a5dc32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4281163635757299847
 PrefabInstance:
   m_ObjectHideFlags: 0

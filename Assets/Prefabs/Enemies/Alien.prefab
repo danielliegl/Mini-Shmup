@@ -135,6 +135,7 @@ MonoBehaviour:
   effect_: {fileID: 5689307968892551599, guid: 1ea3c8f31b763104e8a63a7c42d52a10, type: 3}
   gm_: {fileID: 0}
   rb_: {fileID: 0}
+  powerup_: {fileID: 6056177128833850175, guid: 3bac46d2a824eee40b5b4b111b31fcab, type: 3}
 --- !u!50 &5843429041541665290
 Rigidbody2D:
   serializedVersion: 4

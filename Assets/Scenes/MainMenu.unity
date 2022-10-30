@@ -887,8 +887,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Controls:\nPlayer 1:\n\tWasd ... Move\n\tSpace ... Shoot\nPlayer 2:\n\tArrow
-    Keys ... Move\n\tEnter/Num0 ... Shoot"
+  m_text: "Controls:\nPlayer 1:\n\tWasd\tMove\n\tSpace\tShoot\n\tB\tBomb\nPlayer
+    2:\n\tArrow Keys\tMove\n\tEnter/Num0\tShoot\n\tLShift/NUM1\tBomb"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6567158a3259a8f49b252f403e5b1837, type: 2}
   m_sharedMaterial: {fileID: -1874914420860755432, guid: 6567158a3259a8f49b252f403e5b1837, type: 2}
@@ -983,7 +983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386432308
 RectTransform:
   m_ObjectHideFlags: 0
