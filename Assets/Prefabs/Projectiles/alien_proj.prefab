@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShadowOffset: {x: -0.1, y: -0.1}
-  ShadowMaterial: {fileID: 0}
+  ShadowMaterial: {fileID: 2100000, guid: 6f6bebbcce5374a44976b05b6984c996, type: 2}
 --- !u!61 &8466072917811563665
 BoxCollider2D:
   m_ObjectHideFlags: 0
